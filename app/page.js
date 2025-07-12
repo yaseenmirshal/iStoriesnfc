@@ -1,103 +1,106 @@
-import Image from "next/image";
+'use client';
 
-export default function Home() {
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import {
+  FaInstagram,
+  FaFacebook,
+  FaWhatsapp,
+  FaLinkedin,
+  FaTwitter,
+  FaMobileAlt,
+  FaHeadphonesAlt,
+  FaWrench,
+} from 'react-icons/fa';
+
+export default function IstoriesNfcCard() {
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
+
+  const handleSaveContact = () => {
+    alert('Contact saved (placeholder)');
+  };
+
+  const handleVisitStore = () => {
+    alert('Redirecting to store (placeholder)');
+  };
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main className="min-h-screen bg-white text-black px-6 py-10 font-sans">
+      {/* Header */}
+      <section className="text-center mb-8" data-aos="zoom-in">
+        <div className="w-24 h-24 rounded-full bg-black text-white flex items-center justify-center mx-auto shadow-lg">
+          <span className="font-extrabold text-lg">Logo</span>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+        <h1 className="text-3xl font-bold mt-4 tracking-wider uppercase">iStories</h1>
+        <p className="text-sm text-gray-600 mt-1">Premium Reseller</p>
+      </section>
+
+      {/* Store Image Placeholder */}
+      <section className="w-full h-48 bg-gray-200 rounded-xl mb-8 flex items-center justify-center" data-aos="fade-up">
+        <span className="text-gray-500">Shop Photo</span>
+      </section>
+
+      {/* Social Media Icons */}
+      <section className="flex justify-center gap-4 mb-8" data-aos="fade-up">
+        {[FaInstagram, FaFacebook, FaWhatsapp, FaLinkedin, FaTwitter].map((Icon, i) => (
+          <div key={i} className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center hover:scale-110 transition">
+            <Icon className="text-lg" />
+          </div>
+        ))}
+      </section>
+
+      {/* Services */}
+      <section className="grid grid-cols-1 gap-6 text-center max-w-md mx-auto" data-aos="fade-up">
+        <div className="flex items-center gap-4">
+          <div className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center">
+            <FaMobileAlt />
+          </div>
+          <span className="text-left">iPhones & Android Phones</span>
+        </div>
+        <div className="flex items-center gap-4">
+          <div className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center">
+            <FaMobileAlt />
+          </div>
+          <span className="text-left">Fresh & Used Phones</span>
+        </div>
+        <div className="flex items-center gap-4">
+          <div className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center">
+            <FaHeadphonesAlt />
+          </div>
+          <span className="text-left">Accessories</span>
+        </div>
+        <div className="flex items-center gap-4">
+          <div className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center">
+            <FaWrench />
+          </div>
+          <span className="text-left">Repair & Service Support</span>
+        </div>
+      </section>
+
+      {/* Buttons */}
+      <div className="text-center mt-12 space-y-4" data-aos="fade-up">
+        <button
+          onClick={handleSaveContact}
+          className="bg-black text-white px-6 py-2 rounded-full shadow-[inset_0_-3px_0_rgba(0,0,0,0.2)] hover:brightness-110 transition"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          Save Contact
+        </button>
+        <br />
+        <button
+          onClick={handleVisitStore}
+          className="bg-black text-white px-6 py-2 rounded-full shadow-[inset_0_-3px_0_rgba(0,0,0,0.2)] hover:brightness-110 transition"
         >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+          Visit Our Store
+        </button>
+      </div>
+
+      {/* Footer */}
+      <footer className="text-center text-sm text-gray-500 mt-16" data-aos="fade-up">
+        <p>Powered by <span className="text-black font-semibold">RanzomTech</span></p>
       </footer>
-    </div>
+    </main>
   );
 }
