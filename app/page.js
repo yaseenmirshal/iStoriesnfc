@@ -32,15 +32,15 @@ export default function IstoriesNfcCard() {
       {/* Header */}
       <section className="text-center mb-8" data-aos="zoom-in">
         <div className="w-24 h-24 rounded-full bg-black text-white flex items-center justify-center mx-auto shadow-lg">
-          <span className="font-extrabold text-lg">Logo</span>
+        <img src="/istories logo.png" alt="iStories" className="w-full h-full rounded-full object-cover" />
         </div>
         <h1 className="text-3xl font-bold mt-4 tracking-wider uppercase">iStories</h1>
         <p className="text-sm text-gray-600 mt-1">Premium Reseller</p>
       </section>
 
       {/* Store Image Placeholder */}
-      <section className="w-full h-48 bg-gray-200 rounded-xl mb-8 flex items-center justify-center" data-aos="fade-up">
-        <span className="text-gray-500">Shop Photo</span>
+      <section className="w-full h-60  bg-gray-200 rounded-xl mb-8 flex items-center justify-center" data-aos="fade-up">
+        <img src="/sistories shop.jpeg" alt="iStories" className="w-full h-full rounded-2xl object-cover" />
       </section>
 
       {/* Social Media Icons */}
