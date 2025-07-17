@@ -30,16 +30,16 @@ export default function IstoriesNfcCard() {
   return (
     <main className="min-h-screen bg-white text-black px-6 py-10 font-sans">
       {/* Header */}
-      <section className="text-center mb-8" data-aos="zoom-in">
-        <div className="w-24 h-24 rounded-full bg-black text-white flex items-center justify-center mx-auto shadow-lg">
-        <img src="/istories logo.png" alt="iStories" className="w-full h-full rounded-full object-cover" />
+      <section className="text-center mb-4" data-aos="zoom-in">
+        <div className="w-50 h-50 flex items-center justify-center mx-auto bg-white">
+          <img src="/istories logo white.png" alt="iStories" className="w-full h-full object-cover" />
         </div>
-        <h1 className="text-3xl font-bold mt-4 tracking-wider uppercase">iStories</h1>
-        <p className="text-sm text-gray-600 mt-1">Premium Reseller</p>
+        {/* <h1 className="text-3xl font-semibold mt-4 tracking-wide uppercase">iStories</h1> */}
+        <p className="text-md text-gray-700 -mt-2">Premium Reseller</p>
       </section>
 
       {/* Store Image Placeholder */}
-      <section className="w-full h-60  bg-gray-200 rounded-xl mb-8 flex items-center justify-center" data-aos="fade-up">
+      <section className="w-full h-56 bg-white rounded-xl mb-8 flex items-center justify-center border border-gray-200" data-aos="fade-up">
         <img src="/sistories shop.jpeg" alt="iStories" className="w-full h-full rounded-2xl object-cover" />
       </section>
 
@@ -52,31 +52,32 @@ export default function IstoriesNfcCard() {
         ))}
       </section>
 
+
       {/* Services */}
-      <section className="grid grid-cols-1 gap-6 text-center max-w-md mx-auto" data-aos="fade-up">
-        <div className="flex items-center gap-4">
-          <div className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center">
+      <section className="grid grid-cols-1 gap-5 text-center max-w-md mx-auto" data-aos="fade-up">
+        <div className="flex items-center gap-3">
+          <div className="w-9 h-9 rounded-full border-2 border-black text-black flex items-center justify-center">
             <FaMobileAlt />
           </div>
-          <span className="text-left">iPhones & Android Phones</span>
+          <span className="text-left text-base font-medium">iPhones & Android Phones</span>
         </div>
-        <div className="flex items-center gap-4">
-          <div className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center">
+        <div className="flex items-center gap-3">
+          <div className="w-9 h-9 rounded-full border-2 border-black text-black flex items-center justify-center">
             <FaMobileAlt />
           </div>
-          <span className="text-left">Fresh & Used Phones</span>
+          <span className="text-left text-base font-medium">Fresh & Used Phones</span>
         </div>
-        <div className="flex items-center gap-4">
-          <div className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center">
+        <div className="flex items-center gap-3">
+          <div className="w-9 h-9 rounded-full border-2 border-black text-black flex items-center justify-center">
             <FaHeadphonesAlt />
           </div>
-          <span className="text-left">Accessories</span>
+          <span className="text-left text-base font-medium">Accessories</span>
         </div>
-        <div className="flex items-center gap-4">
-          <div className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center">
+        <div className="flex items-center gap-3">
+          <div className="w-9 h-9 rounded-full border-2 border-black text-black flex items-center justify-center">
             <FaWrench />
           </div>
-          <span className="text-left">Repair & Service Support</span>
+          <span className="text-left text-base font-medium">Repair & Service Support</span>
         </div>
       </section>
 
@@ -84,22 +85,25 @@ export default function IstoriesNfcCard() {
       <div className="text-center mt-12 space-y-4" data-aos="fade-up">
         <button
           onClick={handleSaveContact}
-          className="bg-black text-white px-6 py-2 rounded-full shadow-[inset_0_-3px_0_rgba(0,0,0,0.2)] hover:brightness-110 transition"
+          className="border-2 border-black text-black bg-white px-6 py-2 rounded-full hover:bg-black hover:text-white transition font-medium shadow-none"
         >
           Save Contact
         </button>
         <br />
         <button
           onClick={handleVisitStore}
-          className="bg-black text-white px-6 py-2 rounded-full shadow-[inset_0_-3px_0_rgba(0,0,0,0.2)] hover:brightness-110 transition"
+          className="border-2 border-black text-black bg-white px-6 py-2 rounded-full hover:bg-black hover:text-white transition font-medium shadow-none"
         >
           Visit Our Store
         </button>
       </div>
 
       {/* Footer */}
-      <footer className="text-center text-sm text-gray-500 mt-16" data-aos="fade-up">
-        <p>Powered by <span className="text-black font-semibold">RanzomTech</span></p>
+      <footer className="text-center text-base text-black font-semibold mt-20 flex flex-col items-center gap-2" data-aos="fade-up">
+        <hr className="w-1/3 border-gray-200 mb-2" />
+        <p>
+          Powered by <span className="text-black font-bold tracking-wide">RanzomTech</span>
+        </p>
       </footer>
     </main>
   );
