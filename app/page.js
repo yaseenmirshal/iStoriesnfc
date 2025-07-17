@@ -5,10 +5,9 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import {
   FaInstagram,
-  FaFacebook,
+  // FaFacebook,
   FaWhatsapp,
-  FaLinkedin,
-  FaTwitter,
+  FaPhone,
   FaMobileAlt,
   FaHeadphonesAlt,
   FaWrench,
@@ -26,6 +25,12 @@ export default function IstoriesNfcCard() {
   const handleVisitStore = () => {
     alert('Redirecting to store (placeholder)');
   };
+
+  const socialLinks = [
+    { icon: FaInstagram, url: "https://www.instagram.com/i_stories_official/" },
+    { icon: FaWhatsapp, url: "https://wa.me/918714111740" },
+    { icon: FaPhone, url: "tel:+917356641740" },
+  ];
 
   return (
     <main className="min-h-screen bg-white text-black px-6 py-10 font-sans">
@@ -45,10 +50,16 @@ export default function IstoriesNfcCard() {
 
       {/* Social Media Icons */}
       <section className="flex justify-center gap-4 mb-8" data-aos="fade-up">
-        {[FaInstagram, FaFacebook, FaWhatsapp, FaLinkedin, FaTwitter].map((Icon, i) => (
-          <div key={i} className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center hover:scale-110 transition">
+        {socialLinks.map(({ icon: Icon, url }, i) => (
+          <a
+            key={i}
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center hover:scale-110 transition"
+          >
             <Icon className="text-lg" />
-          </div>
+          </a>
         ))}
       </section>
 
