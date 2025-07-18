@@ -8,9 +8,11 @@ import {
   // FaFacebook,
   FaWhatsapp,
   FaPhone,
+  FaEnvelope,
   FaMobileAlt,
   FaHeadphonesAlt,
   FaWrench,
+
 } from 'react-icons/fa';
 
 export default function IstoriesNfcCard() {
@@ -30,6 +32,7 @@ export default function IstoriesNfcCard() {
     { icon: FaInstagram, url: "https://www.instagram.com/i_stories_official/" },
     { icon: FaWhatsapp, url: "https://wa.me/918714111740" },
     { icon: FaPhone, url: "tel:+917356641740" },
+    { icon: FaEnvelope, url: "mailto:istoriesofficial25@gmail.com" },
   ];
 
   return (
