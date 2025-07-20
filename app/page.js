@@ -21,7 +21,12 @@ export default function IstoriesNfcCard() {
   }, []);
 
   const handleSaveContact = () => {
-    alert('Contact saved (placeholder)');
+    const link = document.createElement('a');
+    link.href = '/iStories.vcf';
+    link.download = 'iStories.vcf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   const handleVisitStore = () => {
