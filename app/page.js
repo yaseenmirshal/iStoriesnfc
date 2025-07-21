@@ -12,7 +12,9 @@ import {
   FaMobileAlt,
   FaHeadphonesAlt,
   FaWrench,
-
+  FaShareAlt,
+  FaAddressBook,
+  FaMapMarkerAlt,
 } from 'react-icons/fa';
 
 export default function IstoriesNfcCard() {
@@ -30,7 +32,30 @@ export default function IstoriesNfcCard() {
   };
 
   const handleVisitStore = () => {
-    alert('Redirecting to store (placeholder)');
+    window.open('https://www.google.com/maps/place/Perumanna,+Kerala/@11.2433838,75.8731577,15z/data=!3m1!4b1!4m6!3m5!1s0x3ba65b18381787f5:0x679a5d58496deaeb!8m2!3d11.2451434!4d75.8849448!16s%2Fg%2F11h03ghgnj?entry=ttu&g_ep=EgoyMDI1MDcxNi4wIKXMDSoASAFQAw%3D%3D', '_blank');
+  };
+
+  const handleShare = async () => {
+    const shareData = {
+      title: 'iStories NFC',
+      text: 'Check out iStories NFC Premium Reseller!',
+      url: window.location.href,
+    };
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+      } catch (err) {
+        // Optionally handle error
+      }
+    } else {
+      // Fallback: copy link to clipboard
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        alert('Link copied to clipboard!');
+      } catch (err) {
+        alert('Unable to share.');
+      }
+    }
   };
 
   const socialLinks = [
@@ -71,9 +96,41 @@ export default function IstoriesNfcCard() {
         ))}
       </section>
 
+      <div className="flex flex-col items-center w-full mt-4 mb-8" data-aos="fade-up">
+  <div className="flex justify-center gap-3 flex-wrap w-full">
+    <button
+      onClick={handleShare}
+      className="flex items-center gap-2 px-5 py-2 rounded-lg font-medium bg-white border border-gray-300 text-gray-800 hover:bg-gray-100 transition"
+      aria-label="Share"
+    >
+      <FaShareAlt className="text-base" />
+      Share
+    </button>
+
+    <button
+      onClick={handleSaveContact}
+      className="flex items-center gap-2 px-5 py-2 rounded-lg font-medium bg-white border border-gray-300 text-gray-800 hover:bg-gray-100 transition"
+    >
+      <FaAddressBook className="text-base" />
+      Save Contact
+    </button>
+  </div>
+
+  <button
+    onClick={handleVisitStore}
+    className="flex items-center gap-2 mt-4 px-5 py-2 rounded-lg font-medium bg-white border border-gray-300 text-gray-800 hover:bg-gray-100 transition"
+  >
+    <FaMapMarkerAlt className="text-base" />
+    Visit Our Store
+  </button>
+</div>
+
+
 
       {/* Services */}
       <section className="grid grid-cols-1 gap-5 text-center max-w-md mx-auto" data-aos="fade-up">
+
+        <h1 className='text-2xl font-bold'>SERVICES</h1>
         <div className="flex items-center gap-3">
           <div className="w-9 h-9 rounded-full border-2 border-black text-black flex items-center justify-center">
             <FaMobileAlt />
@@ -101,28 +158,16 @@ export default function IstoriesNfcCard() {
       </section>
 
       {/* Buttons */}
-      <div className="text-center mt-12 space-y-4" data-aos="fade-up">
-        <button
-          onClick={handleSaveContact}
-          className="border-2 border-black text-black bg-white px-6 py-2 rounded-full hover:bg-black hover:text-white transition font-medium shadow-none"
-        >
-          Save Contact
-        </button>
-        <br />
-        <button
-          onClick={handleVisitStore}
-          className="border-2 border-black text-black bg-white px-6 py-2 rounded-full hover:bg-black hover:text-white transition font-medium shadow-none"
-        >
-          Visit Our Store
-        </button>
-      </div>
+     
 
       {/* Footer */}
-      <footer className="text-center text-base text-black font-semibold mt-20 flex flex-col items-center gap-2" data-aos="fade-up">
+      <footer className="text-center text-base text-black font-semibold mt-10 flex flex-col items-center gap-2" data-aos="fade-up">
         <hr className="w-1/3 border-gray-200 mb-2" />
+        <a href='https://www.instagram.com/ranzomtech?igsh=OGV3MW4xZXdlaW5z' target='_blank'>
         <p>
           Powered by <span className="text-black font-bold tracking-wide">RanzomTech</span>
         </p>
+        </a>
       </footer>
     </main>
   );
