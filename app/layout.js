@@ -12,8 +12,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "iStories NFC ",
-  description: "Business NFC ",
+  title: "iStories Contact Details",
+  description: "NFC",
 };
 
 export default function RootLayout({ children }) {
