@@ -23,7 +23,7 @@ export default function IstoriesNfcCard() {
 
   const handleSaveContact = () => {
     const link = document.createElement('a');
-    link.href = '/iStories.vcf';
+    link.href = '/iStories Mobile.vcf';
     link.download = 'iStories.vcf';
     document.body.appendChild(link);
     link.click();
@@ -160,11 +160,11 @@ export default function IstoriesNfcCard() {
       {/* Footer */}
       <footer className="text-center text-base text-black font-semibold mt-10 flex flex-col items-center gap-2" data-aos="fade-up">
         <hr className="w-1/3 border-gray-200 mb-2" />
-        <a href='https://www.instagram.com/ranzomtech?igsh=OGV3MW4xZXdlaW5z' target='_blank'>
+
           <p>
             Powered by <span className="text-black font-bold tracking-wide">Brandlee</span>
           </p>
-        </a>
+        
       </footer>
     </main>
   );
